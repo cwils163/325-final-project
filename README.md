@@ -14,9 +14,6 @@ The goal of this project is to develop a tool that helps readers regain confiden
 - **Comprehensive Trigger Detection**  
   Develop a robust model that identifies a list of potential triggers within a work, using data from research papers like Wolska’s *Trigger Warnings: Bootstrapping a Violence Detector for Fan Fiction*.
 
-- **User-Friendly Experience**  
-  Create an interface that clearly displays the emotional tone and triggers present in analyzed texts, supporting users in making informed choices about the media they engage with.
-
 ## Methodology
 
 1. **Data Collection**
