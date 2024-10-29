@@ -21,13 +21,14 @@ The goal of this project is to develop a tool that helps readers regain confiden
    - Use additional open-source datasets for training and validation of sentiment and trigger detection models.
 
 2. **Model Development**
-   - Start with a logistic regression model for mental health sentiment classification.
+   - Tokenize and preprocess text so our model can properly utilize it in training and testing.
+   - Use a logistic regression model for mental health sentiment classification.
    - Fine-tune the model to classify texts with mental health-related sentiments and generate a comprehensive list of triggers within the content.
-   - Tokenize and preprocess text to identify tone and potential triggers.
    - Use specialized natural language processing techniques to enhance the model’s ability to identify subtle triggers in text.
 
-3. **Evaluation**
+4. **Evaluation**
    - Evaluate the model’s effectiveness in classifying mental health tones and identifying triggers using relevant metrics like precision, recall, and F1-score.
+   - Utilize a confusion matrix to help visualize our model's performance.
 
 ## Expected Outcomes
 
