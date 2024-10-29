@@ -44,7 +44,8 @@ The goal of this project is to develop a tool that helps readers regain confiden
 ## References
 
 - \[b1\] *National Institute of Mental Health*. "Mental Illness." Available at: [https://www.nimh.nih.gov](https://www.nimh.nih.gov).
-- \[b2\] Wolska, Magdalena. "Trigger Warnings: Bootstrapping a Violence Detector for Fan Fiction." Available at: [https://downloads.webis.de/publications/papers/wolska_2023.pdf] 
+- \[b2\] Wolska, Magdalena. "Trigger Warnings: Bootstrapping a Violence Detector for Fan Fiction." Available at: [https://downloads.webis.de/publications/papers/wolska_2023.pdf]
+- \[b3\] Sarkar, Suchintika. "Sentiment Analysis for Mental Health: Unlocking Mental Health Patterns through Statements." Available at: [https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health/data]
 
 ---
 
@@ -53,7 +54,13 @@ The goal of this project is to develop a tool that helps readers regain confiden
 - Expanding the trigger detection model to cover more nuanced triggers across multiple media types.
 
 ---
+## Our Code
 
+- Data.csv: A csv file containing the data from Kaggle
+- dataAnalysis.py: A python file used to analyze the data contained in Data.csv
+- model.ipynb: A Jupyter file that performs the baseline implementation of our model.
+- B_CM, DT_CM, LR_CM: PNG files of the confusion matrices generated from running model.ipynb
+---
 ## Contributors
 
 - **Deborah (Katie) Moffitt**
