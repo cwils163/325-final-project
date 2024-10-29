@@ -56,10 +56,10 @@ The goal of this project is to develop a tool that helps readers regain confiden
 ---
 ## Our Code
 
-- Data.csv: A csv file containing the data from Kaggle
-- dataAnalysis.py: A python file used to analyze the data contained in Data.csv
-- model.ipynb: A Jupyter file that performs the baseline implementation of our model.
-- B_CM, DT_CM, LR_CM: PNG files of the confusion matrices generated from running model.ipynb
+- `Data.csv`: A csv file containing the data from Kaggle
+- `dataAnalysis.py`: A python file used to analyze the data contained in Data.csv
+- `model.ipynb`: A Jupyter file that performs the baseline implementation of our model.
+- `B_CM.png, DT_CM.png, LR_CM.png`: PNG files of the confusion matrices generated from running model.ipynb
 ---
 ## Contributors
 
