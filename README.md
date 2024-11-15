@@ -61,6 +61,8 @@ The goal of this project is to develop a tool that helps readers regain confiden
 - `model.ipynb`: A Jupyter file that performs the baseline implementation of our model.
 - `B_CM.png, DT_CM.png, LR_CM.png`: PNG files of the confusion matrices generated from running model.ipynb
 ---
+## How to Compile
+- To compile our code you will need streamlit installed. To run the website with streamlit use the command `streamlit run website.py`
 ## Contributors
 
 - **Deborah (Katie) Moffitt**
