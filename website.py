@@ -6,6 +6,7 @@ from nltk.tokenize import word_tokenize
 import pickle
 from annotated_text import annotated_text
 import matplotlib.pyplot as plt
+import random
 
 # for stemming the words
 def stem_words(words):
@@ -32,12 +33,22 @@ if uploaded_file:
         decoded_line = decoded_line.replace('? ', '.')
         decoded_line = decoded_line.replace('. ', '.')
         decoded_line = decoded_line.replace('\n', '')
+        decoded_line = decoded_line.replace('\r', '')
 
         decoded_line = decoded_line
         split = decoded_line.split('.')
 
         for i in split:
             sentences.append(i)
+    
+    print(sentences)
+    remove = []
+    for i in range(len(sentences)):
+        if sentences[i] == '':
+            remove.append(i)
+
+    for i in remove:
+        sentences.remove('')
 
     # adds sentences to dataframe
     df = pd.DataFrame()
@@ -60,34 +71,59 @@ if uploaded_file:
     with open('model_pkl', 'rb') as f:
         trained_model = pickle.load(f)
         predictions = trained_model.predict(text_vect)
-
-    # uploads the label encoder
-    with open('labels_pkl', 'rb') as f:
-        imp_labels = pickle.load(f)
-
-    # gets labels from the label encoder
-    labels = imp_labels.classes_
+    print(predictions)
 
     # gets the results for outputting the text
-    colors = []
     results = []
+    #"Normal":0,"Depression":0,"Suicidal":1,"Anxiety":0,"Stress":0,"Discrimination":0,"Aggression":0,"Abuse":0,"Pregnancy":0,"Medical":0,"Mental-Health":0,"Sexual-Content":0}
     for i in predictions:
-        if labels[i] == 'Suicidal':
-            colors.append('#ff7f50') # coral
-        elif labels[i] == 'Anxiety':
-            colors.append('#ccccff') # periwinkle
-        elif labels[i] == 'Depression':
-            colors.append('#d8bfd8') # thistle
-        elif labels[i] == 'Bipolar':
-            colors.append('#ffff8f') # canary yellow
-        elif labels[i] == 'Stress':
-            colors.append('#f0e68c') # khaki
-        elif labels[i] == 'Normal':
-            colors.append('#e5e4e2') # platinum
-        else: # Personality Disorder
-            colors.append('#c1e1c1') # pastel green
-        results.append(labels[i])
-
+        label = ''
+        if i[11] == 1:
+            label += 'Sexual-Content '
+        if i[1] == 1:
+            label += 'Depression '
+        if i[2] == 1:
+            label += 'Suicidal '
+        if i[3] == 1:
+            label += 'Anxiety '
+        if i[4] == 1:
+            label += 'Stress '
+        if i[5] == 1:
+            label += 'Discrimination '
+        if i[6] == 1:
+            label += 'Aggression '
+        if i[7] == 1:
+            label += 'Abuse '
+        if i[8] == 1:
+            label += 'Pregnancy '
+        if i[9] == 1:
+            label += 'Medical '
+        if i[10] == 1:
+            label += 'Mental-Health '
+        if i[0] == 1:
+            label += 'Normal '
+        if label == '':
+            label += 'Normal '
+        results.append(label)
+                # khaki, periwinkle, robin egg blue, light blue, light green, pastel green, apricot, coral pink, light pink, thistle, flax, mauve, rose gold, pastel orange
+    print(results)
+    colors = ['na'] * len(results)
+    color_list = ['#f0e68c', '#ccccff', '#96ded1', '#add8e6', '#90ee90', '#c1e1c1', '#fbceb1', '#f88379', '#ffb6c1', '#d8bfd8', '#eedc82', '#e0b0ff', '#e0bfb8', '#fac898']
+    found_results = []
+    used_colors = []
+    for i in results:
+        if i in found_results:
+            continue
+        else:
+            found_results.append(i)
+            c = random.choice(color_list)
+            while c in used_colors:
+                c = random.choice(color_list)
+            used_colors.append(c)
+            for j in range(len(results)):
+                if results[j] == i:
+                    colors[j] = c
+    print(colors)
     st.markdown('#')
     st.header('Results:')
     
