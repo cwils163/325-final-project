@@ -53,19 +53,23 @@ if uploaded_file:
         # adds sentences to dataframe
         df = pd.DataFrame()
         df['sentences'] = sentences
+        #print('sentences added')
 
         # tokenizes the words
         df['sentences'] = df['sentences'].apply(word_tokenize)
+        #print('words tokenized')
 
         # stems the words
         stemmer = PorterStemmer()
         df['sentences'] = df['sentences'].apply(stem_words)
         text = df['sentences']
+        #print('words stemmed')
 
         # loads vectorizer and vectorizes the text
         with open('tfidf_pkl', 'rb') as f:
             trained_vect = pickle.load(f)
             text_vect = trained_vect.transform(text)
+        #print('text vectorized')
 
         # predicts labels for text using uploaded model
         with open('model_pkl', 'rb') as f:
@@ -105,10 +109,10 @@ if uploaded_file:
             if label == '':
                 label += 'Normal '
             results.append(label)
-                    # khaki, periwinkle, robin egg blue, light blue, light green, pastel green, apricot, coral pink, light pink, thistle, flax, mauve, rose gold, pastel orange
+                    # khaki, periwinkle, robin egg blue, light blue, light green, pastel green, apricot, coral pink, light pink, thistle, flax, mauve, rose gold, pastel orange, moccasin, lightcyan
         #print(results)
         colors = ['na'] * len(results)
-        color_list = ['#f0e68c', '#ccccff', '#96ded1', '#add8e6', '#90ee90', '#c1e1c1', '#fbceb1', '#f88379', '#ffb6c1', '#d8bfd8', '#eedc82', '#e0b0ff', '#e0bfb8', '#fac898']
+        color_list = ['#f0e68c', '#ccccff', '#96ded1', '#add8e6', '#90ee90', '#c1e1c1', '#fbceb1', '#f88379', '#ffb6c1', '#d8bfd8', '#eedc82', '#e0b0ff', '#e0bfb8', '#fac898', '#ffe4b5', '#e0ffff']
         found_results = []
         used_colors = []
         for i in results:
@@ -117,8 +121,9 @@ if uploaded_file:
             else:
                 found_results.append(i)
                 c = random.choice(color_list)
-                while c in used_colors:
-                    c = random.choice(color_list)
+                if len(used_colors) < len(color_list):
+                    while c in used_colors:
+                        c = random.choice(color_list)
                 used_colors.append(c)
                 for j in range(len(results)):
                     if results[j] == i:
