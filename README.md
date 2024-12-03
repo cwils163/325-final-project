@@ -22,7 +22,7 @@ The goal of this project is to develop a tool that helps readers regain confiden
 
 2. **Model Development**
    - Tokenize and preprocess text so our model can properly utilize it in training and testing.
-    - In the process of working on model accuracy we ended up with two models that differ in the way that they break words down to their roots. One model uses Stemming which will not necessarily generate real words for roots and the other uses Lemming which guarantees real words.
+      - In the process of working on model accuracy we ended up with two models that differ in the way that they break words down to their roots. One model uses Stemming which will not necessarily generate real words for roots and the other uses Lemming which guarantees real words.
    - Use a logistic regression model for mental health sentiment classification.
    - Fine-tune the model to classify texts with mental health-related sentiments and generate a comprehensive list of triggers within the content.
    - Use specialized natural language processing techniques to enhance the model’s ability to identify subtle triggers in text.
