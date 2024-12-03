@@ -1,0 +1,13 @@
+# How Data was set up
+## Overview
+Overall there were two main steps to getting our datasets set up. The first step was taking our dehydrated set which was downloaded from [here](https://zenodo.org/records/7976807) and getting the specific samples and features that we needed. The second step was hydrating our dehydrated datasets by adding the text for each sample since it only has labels as is.
+
+## Step 1
+All of the code needed for this step is contained within `data_cleanup.ipynb`. Because the dehydrated we downloaded had a lot of unneeded samples and features we only grabbed what we needed to save on storage and space. The Jupyter Notebook is split up into 2 parts. First we use 3 txt files to specify which fanfics we want and then separate those specific samples to get the `full_XXX.jsonl` files. After that we get only the features we want which is just the text, labels, and work ids used to get the text. This information goes into the `dehydrated_XXX.jsonl` files to then by hydrated.
+
+## Step 2
+You will need to hydrate the datasets one at a time. To do this move the dehydrated file and its corresponding txt into `acl23-trigger-warning-assignment`. Make a copy of the txt file and move it into `./acl23_trigger_warning_assignment/resources/splits/`. Then, to run the code you will need to go into `./acl23_trigger_warning_assignment/hydration/hydrate.py` and set `file_name` in line 63 to the dataset you're currently working with (e.g., 'AO3_1'). You'll also have to adjust the with statements in lines 66 and 72 based on the commented instructions. Once you've done this you can hydrate the file with the command `python ./acl23_trigger_warning_assignment/hydration/hydrate.py -d ./dehydrated_yourDatasetHere.jsonl -- splits ./acl23_trigger_warning_assignment/resources/splits`. This can take a while so if you have to quit at a later time you can use the restart.py function. To do this run the command `python restart.py`. After you do this you'll have to go back into `hydrate.py` and change the with statements in 66 and 72. With this change made you're good to use the same hydrate command as before to resume hydrating your dataset.
+
+## References
+- acl23-trigger-warning-assignment was gained from [this Github](https://github.com/MattiWe/acl23-trigger-warning-assignment)
+- original dehydrated dataset can be found in through the GitHub or [here](https://zenodo.org/records/7976807) 
