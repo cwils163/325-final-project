@@ -77,7 +77,7 @@ We learned a lot from this project, especially a lot about the processing of dat
 ## How to Compile
 - To compile our website code you will need streamlit installed.
 - Running the Lemming Model
-  - Navigate to `/Stemming_Model`
+  - Navigate to `/Lemming_Model`
   - Run code in the Jupyter notebook titled `lem_model.ipynb`
 - Running the Interactive Website for the Lemming Model: 
   - Navigate to `/Lemming_Model`
