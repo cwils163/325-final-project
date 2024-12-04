@@ -62,7 +62,7 @@ The goal of this project is to develop a tool that helps readers regain confiden
  
 ## What We Learned
 
-We learned a lot from this project, especially a lot about the processing of data before a model is even trained. In many of our assignments and other classes we are given datasets that have already been processed and optimized for the project, but this is one of the first times where we had to shape and set up the dataset so that it would work better for our model. 
+We learned a lot from this project, especially a lot about the processing of data before a model is even trained. In many of our assignments and other classes we are given datasets that have already been processed and optimized for the project, but this is one of the first times where we had to shape and set up the dataset so that it would work better for our model. We know now that picking the right dataset is very important to a project, and that sometimes something that you think will help the dataset to improve the accuracy may not be the problem with the accuracy at all. We realize that tuning the datasets and improving accuracy of a model is all part of machine learning and that people spend their careers focused on that. 
 
 ---
 ## Our Code
