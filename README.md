@@ -55,7 +55,14 @@ The goal of this project is to develop a tool that helps readers regain confiden
 ## Future Work
 
 - Continuing to increase accuracy of the model
+  - With further cleaning of the data we believe we can increase the model's accuracy. The data we used contained large chunks of text from a piece of literature with multiple labels attached. These labels are sometimes only attributed to a piece of that text, sometimes just a phrase or a word. If we could break down the text and more specifically label those smaller pieces within the whole text, it would probably improve the model's accuracy.
+  - This can be seen by how a lot of the broken down phrases and sentences weren't always labeled the most accurate label, but as a whole the text did contain the list of labels that was generated. I believe this is because of how it was trained on data that labeled large chunks of text rather than specific pieces of it. 
 - Train with full Wiegmann Dataset
+  - This would take a longer time to clean and setup the data as even just the small chunk took us a while. We believe using the full dataset would give the model more data to train on and could possibly improve the outputs.
+ 
+## What We Learned
+
+We learned a lot from this project, especially a lot about the processing of data before a model is even trained. In many of our assignments and other classes we are given datasets that have already been processed and optimized for the project, but this is one of the first times where we had to shape and set up the dataset so that it would work better for our model. 
 
 ---
 ## Our Code
