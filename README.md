@@ -70,7 +70,7 @@ We learned a lot from this project, especially a lot about the processing of dat
 - `Dataset_Setup`: Code and files relating to the setting up/creation of our datasets.
 - `Datasets`: Datasets actively used in our models.
 - `Demonstration_Text`: .txt examples to use for our in class presentation as well as .jpg examples of website results.
-- `Lemming_Model`: Model and other files needed to run our model that uses Lemmatize in place of Stemming.
+- `Lemming_Model`: Model and other files needed to run our model that uses Lemming in place of Stemming.
 - `Midterm_Model`: Code and images used for our midterm report.
 - `Stemming_Model`: Model and other files needed to run our model that uses Stemming in place of Lemmatize
 ---
@@ -88,6 +88,7 @@ We learned a lot from this project, especially a lot about the processing of dat
 - Running the Interactive Website for the Stemming Model: 
   - Navigate to `/Stemming_Model`
   - Run command `streamlit run StemWebsite.py`
+---
 ## Contributors
 
 - **Deborah (Katie) Moffitt**
