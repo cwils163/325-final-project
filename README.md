@@ -68,11 +68,17 @@ The goal of this project is to develop a tool that helps readers regain confiden
 - `Stemming_Model`: Model and other files needed to run our model that uses Stemming in place of Lemmatize
 ---
 ## How to Compile
-- To compile our code you will need streamlit installed.
-- Running the Lemming Model: 
+- To compile our website code you will need streamlit installed.
+- Running the Lemming Model
+  - Navigate to `/Stemming_Model`
+  - Run code in the Jupyter notebook titled `lem_model.ipynb`
+- Running the Interactive Website for the Lemming Model: 
   - Navigate to `/Lemming_Model`
   - Run command `streamlit run LemWebsite.py`
-- Running the Stemming Model: 
+- Running the Stemming Model
+  - Navigate to `/Stemming_Model`
+  - Run code in the Jupyter notebook titled `stem_model.ipynb`
+- Running the Interactive Website for the Stemming Model: 
   - Navigate to `/Stemming_Model`
   - Run command `streamlit run StemWebsite.py`
 ## Contributors
